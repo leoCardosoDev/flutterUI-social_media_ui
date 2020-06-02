@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialmediaapp/screens/home_screen.dart';
 import 'package:socialmediaapp/widget/curve_clipper.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: <Widget>[
               ClipPath(
-               clipper: CurveClipper(),
+                clipper: CurveClipper(),
                 child: Image(
                   height: MediaQuery.of(context).size.height / 2.5,
                   width: double.infinity,
@@ -70,7 +71,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 40),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => HomeScreen(),
+                      ));
+                },
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 60),
                   height: 45,
@@ -92,9 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Expanded(
                 child: Align(
-                 alignment: FractionalOffset.bottomCenter,
+                  alignment: FractionalOffset.bottomCenter,
                   child: GestureDetector(
-                   onTap: (){},
+                    onTap: () {},
                     child: Container(
                       alignment: Alignment.center,
                       color: Theme.of(context).primaryColor,
@@ -103,8 +110,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         'Não tem uma conta? Crie agora!',
                         style: TextStyle(
                           color: Colors.white,
-                         fontWeight: FontWeight.w500,
-                         fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
                         ),
                       ),
                     ),

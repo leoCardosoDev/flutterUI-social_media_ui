@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             title: 'Posts',
             posts: posts,
           ),
+          SizedBox(height: 80),
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:socialmediaapp/data/data.dart';
 import 'package:socialmediaapp/screens/home_screen.dart';
 import 'package:socialmediaapp/screens/login_screen.dart';
+import 'package:socialmediaapp/screens/profile_screen.dart';
 import 'package:socialmediaapp/widget/drawer_options.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -65,11 +66,20 @@ class CustomDrawer extends StatelessWidget {
           ),
           DrawerOptions(icon: Icon(Icons.chat), title: 'Chat', onTap: () {}),
           DrawerOptions(icon: Icon(Icons.location_on), title: 'Map', onTap: () {}),
-          DrawerOptions(icon: Icon(Icons.account_circle), title: 'Meu Perfil', onTap: () {}),
+          DrawerOptions(
+            icon: Icon(Icons.account_circle),
+            title: 'Meu Perfil',
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ProfileScreen(user: currentUser,),
+              ),
+            ),
+          ),
           DrawerOptions(icon: Icon(Icons.settings), title: 'Configurações', onTap: () {}),
           Expanded(
             child: Align(
-             alignment: FractionalOffset.bottomCenter,
+              alignment: FractionalOffset.bottomCenter,
               child: DrawerOptions(
                 icon: Icon(Icons.directions_run),
                 title: 'Sair',
